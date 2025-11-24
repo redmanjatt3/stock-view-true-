@@ -1,0 +1,1 @@
+async function load(){ const s='AAPL'; const r=await fetch(`/api/yahoo?symbol=${s}`); console.log(await r.json()); } load();

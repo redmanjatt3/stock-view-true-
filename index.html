@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stock Viewer — Yahoo (No Key)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark">
+  <div class="app">
+    <header>
+      <h1>Stock Viewer (Yahoo — Free)</h1>
+      <div class="controls">
+        <input id="symbolInput" placeholder="Enter symbol (AAPL, GOOGL, TCS.BSE)" />
+        <button id="viewBtn">View</button>
+        <button id="addWatchBtn">+ Watch</button>
+        <label class="switch"><input type="checkbox" id="autoRefresh" checked><span>Auto</span></label>
+        <button id="themeBtn">Toggle Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="left">
+        <div class="meta">
+          <div>Symbol: <strong id="symbolLabel">—</strong></div>
+          <div>Latest: <strong id="latestPrice">—</strong></div>
+          <div id="status"></div>
+        </div>
+        <canvas id="chart" height="300"></canvas>
+        <div class="samples">
+          <button class="sample">AAPL</button>
+          <button class="sample">GOOGL</button>
+          <button class="sample">MSFT</button>
+          <button class="sample">TCS.BSE</button>
+          <button class="sample">RELIANCE.BSE</button>
+        </div>
+      </section>
+
+      <aside class="right">
+        <h3>Watchlist</h3>
+        <ul id="watchlist"></ul>
+        <h4>Overlays (multi-plot)</h4>
+        <div id="overlays"></div>
+        <footer class="note">
+          Uses Yahoo Finance public chart endpoint (unofficial). No candlesticks or indicators in this build.
+        </footer>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
